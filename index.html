@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="株式会社houseplant laboは、多肉植物を中心とした観葉植物の販売を行っています。">
+    <title>株式会社houseplant labo - 多肉植物を中心とした観葉植物の販売</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #fff;
+        }
+
+        /* ヘッダー */
+        header {
+            background-color: #fff;
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: #2d5f3f;
+        }
+
+        nav a {
+            margin-left: 30px;
+            text-decoration: none;
+            color: #555;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #2d5f3f;
+        }
+
+        /* ヒーローセクション */
+        .hero {
+            background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f4 100%);
+            padding: 120px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: #2d5f3f;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero .subtitle {
+            font-size: 20px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .hero .description {
+            font-size: 16px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* セクション共通 */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        h2 {
+            font-size: 32px;
+            color: #2d5f3f;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: #7cb68f;
+        }
+
+        /* 事業内容 */
+        .business-content {
+            background-color: #f9faf9;
+            padding: 60px 20px;
+        }
+
+        .business-description {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 16px;
+            line-height: 2;
+        }
+
+        .business-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            font-size: 18px;
+            color: #2d5f3f;
+            margin-bottom: 10px;
+        }
+
+        /* 会社情報 */
+        .company-info {
+            background-color: #fff;
+        }
+
+        .info-table {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .info-row {
+            display: flex;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            background-color: #f5f5f5;
+            padding: 20px 30px;
+            font-weight: 600;
+            color: #2d5f3f;
+            width: 200px;
+            flex-shrink: 0;
+        }
+
+        .info-value {
+            padding: 20px 30px;
+            flex-grow: 1;
+        }
+
+        /* お問い合わせ */
+        .contact {
+            background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f4 100%);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .contact-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .contact-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .contact-label {
+            font-weight: 600;
+            color: #2d5f3f;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .contact-value {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .contact-value a {
+            color: #2d5f3f;
+            text-decoration: none;
+        }
+
+        .contact-value a:hover {
+            text-decoration: underline;
+        }
+
+        /* フッター */
+        footer {
+            background-color: #2d5f3f;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero .subtitle {
+                font-size: 18px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .info-row {
+                flex-direction: column;
+            }
+
+            .info-label {
+                width: 100%;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <div class="header-content">
+            <div class="logo">houseplant labo</div>
+            <nav>
+                <a href="#business">事業内容</a>
+                <a href="#company">会社情報</a>
+                <a href="#contact">お問い合わせ</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section class="hero">
+        <h1>株式会社houseplant labo</h1>
+        <p class="subtitle">多肉植物を中心とした観葉植物の販売</p>
+        <p class="description">
+            私たちは、美しく育てやすい多肉植物を中心に、<br>
+            暮らしに彩りと癒しをもたらす観葉植物をお届けします。
+        </p>
+    </section>
+
+    <!-- 事業内容 -->
+    <section id="business" class="business-content">
+        <h2>事業内容</h2>
+        <div class="business-description">
+            <p>
+                株式会社houseplant laboは、多肉植物を中心とした観葉植物の販売を行っております。<br>
+                将来的にはオンライン販売も展開し、全国のお客様に<br>
+                美しい植物と緑のある暮らしをお届けしてまいります。
+            </p>
+        </div>
+        <div class="business-features">
+            <div class="feature-card">
+                <div class="feature-icon">🌵</div>
+                <h3>多肉植物専門</h3>
+                <p>育てやすく美しい多肉植物を厳選してご提供</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🚚</div>
+                <h3>全国配送対応</h3>
+                <p>日本全国へ丁寧に梱包してお届けします</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💚</div>
+                <h3>緑のある暮らし</h3>
+                <p>植物で暮らしに彩りと癒しをプラス</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 会社情報 -->
+    <section id="company" class="company-info">
+        <h2>会社情報</h2>
+        <div class="info-table">
+            <div class="info-row">
+                <div class="info-label">会社名</div>
+                <div class="info-value">株式会社houseplant labo<br>
+                <small style="color: #666;">カブシキガイシャハウスプラントラボ</small></div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">設立</div>
+                <div class="info-value">令和7年8月8日</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">代表取締役</div>
+                <div class="info-value">髙橋 亘</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">資本金</div>
+                <div class="info-value">100万円</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">所在地</div>
+                <div class="info-value">〒352-0001<br>埼玉県新座市大和田1-8-20</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">事業内容</div>
+                <div class="info-value">観葉植物の販売</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- お問い合わせ -->
+    <section id="contact" class="contact">
+        <h2>お問い合わせ</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="contact-label">営業時間</div>
+                <div class="contact-value">10:00〜18:00</div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-label">電話番号</div>
+                <div class="contact-value"><a href="tel:08041119156">080-4111-9156</a></div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-label">メールアドレス</div>
+                <div class="contact-value"><a href="mailto:takahashiwataru0910@gmail.com">takahashiwataru0910@gmail.com</a></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        <p>&copy; 2025 株式会社houseplant labo All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
